@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+function createStore(reducer, initialState) {
+	// 状态
+	let state = initialState || {}
+	
+	// 监听器队列
+	let listeners = []
+
+	function getState () {
+		return state
+	}
+
+	function dispatch (action) {
+		try {
+			// 触发reducer，获取新状态
+			let newState = reducer(state, action)
+			if (state !== newState) {
+				// 更新状态
+				state = newState
+				// 触发监听
+				listeners.map(i => { typeof i === 'function' && i() })
+			}
+		} catch (error) {
+			throw error
+		}
+	}
+
+	function subscribe (fn) {
+		listeners.push(fn)
+		// 返回一个取消监听器的函数
+		return function unsubscribe() {
+			listeners = []
+		}
+	}
+
+	return {
+		getState,
+		dispatch,
+		subscribe
+	}
+}
+
+
+function actioner (type, payload) {
+	return function (payload) {
+		return {
+			type,
+			payload
+		}
+	}
+}	
+function reducer (state, action) {
+	switch (action.type) {
+		case USERINFO_UPDATE:
+			return Object.assign({}, state, {
+				user: action.payload
+			})
+		default:
+			break;
+	}
+}
+
+const USERINFO_UPDATE = Symbol('userinfo_update')
+
+const updateUserAction = actioner(USERINFO_UPDATE)
+
+// 定义一个初始状态
+let initialState = {
+	user: {}
+}
+
+// 创建store
+let store = createStore(reducer, initialState)
+
+// 添加中间件
+loadMiddleware(store, [logDispatch, checkType])
+
+// 打印初始状态
+console.log('初始状态', store.getState())
+
+// 每次 state 更新时，打印日志
+// 注意 subscribe() 返回一个函数用来注销监听器
+const unsubscribe = store.subscribe((o, n) => {
+	console.log('更新', store.getState())}
+)
+
+// 触发action
+store.dispatch(updateUserAction({
+	name: 'vins',
+	age: '18'
+}))
+
+// 停止监听 state 更新
+unsubscribe()
+
+// 触发action
+store.dispatch(updateUserAction({
+	name: 'vins-lu',
+	age: '0'
+}))
+
+
+// 打印初始状态
+console.log(' 变化',store.getState())
+
+// 中间件的使用
+
+function loadMiddleware(ctx, middlewares) {
+	let index = -1  // 当前准备执行的middleware下标
+
+	function dispatch(i) {
+		if (i <= index) {
+			// 当index改变时，实际调用的i小于等于index时，next会被重复调用，因此抛出错误
+			throw new Error('next() called multiple times')
+		}
+		// 获取当前中间件
+		let fn = middlewares[i]
+		// 最后一个中间件判断
+		if (i === middlewares.length) {
+			return Promise.resolve()
+		}
+		if (!fn) {
+			throw new Error('fn is not exist')
+		}
+		try {
+			// 把上下文和上一个中间件(函数形式)以参数的方式注入下一个中间件
+			return Promise.resolve(fn(ctx, function next() {
+				return dispatch(i + 1)
+			}))
+		} catch (err) {
+			return Promise.reject(err)
+		}
+	}
+	dispatch(0)
+}
+
+function checkType(ctx, next) {
+	next()
+	let dispatch = ctx.dispatch
+	ctx.dispatch = function (action) {
+		if (typeof action.type !== 'symbol') {
+			console.log('action的类型请使用Symbol类型')
+			return !1
+		}
+		dispatch.call(ctx, action)
+	}
+}
+
+function logDispatch (ctx, next) {
+	let dispatch = ctx.dispatch
+	ctx.dispatch = function (action) {
+		console.log('触发', action.type)
+		console.log('触发前的状态为：', ctx.getState())
+		dispatch.call(ctx, action)
+		console.log('触发后的状态为：', ctx.getState())
+	}
+	next()
+}
+
+	</script>
+</body>
+</html>

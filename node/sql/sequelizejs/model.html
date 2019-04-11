@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>sequelizejs-模型 | vins blog</title>
+    <meta name="description" content="vins-blog">
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.522f73f5.css" as="style"><link rel="preload" href="/assets/js/app.4d681007.js" as="script"><link rel="preload" href="/assets/js/138.f78af822.js" as="script"><link rel="prefetch" href="/assets/js/10.6c92f68c.js"><link rel="prefetch" href="/assets/js/100.8af1db53.js"><link rel="prefetch" href="/assets/js/101.a8f212fb.js"><link rel="prefetch" href="/assets/js/102.271e20bf.js"><link rel="prefetch" href="/assets/js/103.4dbd4c71.js"><link rel="prefetch" href="/assets/js/104.394031f5.js"><link rel="prefetch" href="/assets/js/105.eaeab38e.js"><link rel="prefetch" href="/assets/js/106.07ccd110.js"><link rel="prefetch" href="/assets/js/107.eb46ec7e.js"><link rel="prefetch" href="/assets/js/108.5c90f70d.js"><link rel="prefetch" href="/assets/js/109.cd44b569.js"><link rel="prefetch" href="/assets/js/11.1c0e0af2.js"><link rel="prefetch" href="/assets/js/110.a57066cd.js"><link rel="prefetch" href="/assets/js/111.252e8880.js"><link rel="prefetch" href="/assets/js/112.193f8246.js"><link rel="prefetch" href="/assets/js/113.9c4918c3.js"><link rel="prefetch" href="/assets/js/114.974ed66c.js"><link rel="prefetch" href="/assets/js/115.cc476ecf.js"><link rel="prefetch" href="/assets/js/116.cbbb0ff2.js"><link rel="prefetch" href="/assets/js/117.0d09905a.js"><link rel="prefetch" href="/assets/js/118.bed761fe.js"><link rel="prefetch" href="/assets/js/119.00558bbb.js"><link rel="prefetch" href="/assets/js/12.11eefcd9.js"><link rel="prefetch" href="/assets/js/120.599f5d6b.js"><link rel="prefetch" href="/assets/js/121.3314d5f3.js"><link rel="prefetch" href="/assets/js/122.f4ec8581.js"><link rel="prefetch" href="/assets/js/123.4f83939c.js"><link rel="prefetch" href="/assets/js/124.5aecb878.js"><link rel="prefetch" href="/assets/js/125.39f9033e.js"><link rel="prefetch" href="/assets/js/126.b04d084f.js"><link rel="prefetch" href="/assets/js/127.ec3055e2.js"><link rel="prefetch" href="/assets/js/128.81824538.js"><link rel="prefetch" href="/assets/js/129.19dd8429.js"><link rel="prefetch" href="/assets/js/13.727870e3.js"><link rel="prefetch" href="/assets/js/130.cdada4bb.js"><link rel="prefetch" href="/assets/js/131.0beb9709.js"><link rel="prefetch" href="/assets/js/132.11d22220.js"><link rel="prefetch" href="/assets/js/133.15026de0.js"><link rel="prefetch" href="/assets/js/134.82492930.js"><link rel="prefetch" href="/assets/js/135.8a0516c3.js"><link rel="prefetch" href="/assets/js/136.50da2017.js"><link rel="prefetch" href="/assets/js/137.a30c2be2.js"><link rel="prefetch" href="/assets/js/139.71df7032.js"><link rel="prefetch" href="/assets/js/14.e9f14609.js"><link rel="prefetch" href="/assets/js/140.891358ba.js"><link rel="prefetch" href="/assets/js/141.485bdbe9.js"><link rel="prefetch" href="/assets/js/142.cbd5cf73.js"><link rel="prefetch" href="/assets/js/143.f6dc016a.js"><link rel="prefetch" href="/assets/js/144.f33d2461.js"><link rel="prefetch" href="/assets/js/145.14e6b83f.js"><link rel="prefetch" href="/assets/js/146.99477510.js"><link rel="prefetch" href="/assets/js/15.89c2d571.js"><link rel="prefetch" href="/assets/js/16.2208f2ca.js"><link rel="prefetch" href="/assets/js/17.5799c1f8.js"><link rel="prefetch" href="/assets/js/18.928bd560.js"><link rel="prefetch" href="/assets/js/19.8710253f.js"><link rel="prefetch" href="/assets/js/2.619d9f94.js"><link rel="prefetch" href="/assets/js/20.8dfd664a.js"><link rel="prefetch" href="/assets/js/21.e24122e5.js"><link rel="prefetch" href="/assets/js/22.77bcca1f.js"><link rel="prefetch" href="/assets/js/23.c080ea17.js"><link rel="prefetch" href="/assets/js/24.18352236.js"><link rel="prefetch" href="/assets/js/25.684e26b6.js"><link rel="prefetch" href="/assets/js/26.ff83a47d.js"><link rel="prefetch" href="/assets/js/27.41c88d23.js"><link rel="prefetch" href="/assets/js/28.fa030b16.js"><link rel="prefetch" href="/assets/js/29.909ba7e0.js"><link rel="prefetch" href="/assets/js/3.eac51481.js"><link rel="prefetch" href="/assets/js/30.1b8328f7.js"><link rel="prefetch" href="/assets/js/31.6bf4d498.js"><link rel="prefetch" href="/assets/js/32.aef4457c.js"><link rel="prefetch" href="/assets/js/33.d4e930a7.js"><link rel="prefetch" href="/assets/js/34.18a38a89.js"><link rel="prefetch" href="/assets/js/35.953a8f89.js"><link rel="prefetch" href="/assets/js/36.2fccb806.js"><link rel="prefetch" href="/assets/js/37.056c3a61.js"><link rel="prefetch" href="/assets/js/38.0c26ea34.js"><link rel="prefetch" href="/assets/js/39.fb39d5a6.js"><link rel="prefetch" href="/assets/js/4.bae3a048.js"><link rel="prefetch" href="/assets/js/40.d26192b8.js"><link rel="prefetch" href="/assets/js/41.443086b3.js"><link rel="prefetch" href="/assets/js/42.19196aa5.js"><link rel="prefetch" href="/assets/js/43.3bc85c81.js"><link rel="prefetch" href="/assets/js/44.853896aa.js"><link rel="prefetch" href="/assets/js/45.ba20af0a.js"><link rel="prefetch" href="/assets/js/46.d881b154.js"><link rel="prefetch" href="/assets/js/47.4dd20bb8.js"><link rel="prefetch" href="/assets/js/48.defd07fb.js"><link rel="prefetch" href="/assets/js/49.36302155.js"><link rel="prefetch" href="/assets/js/5.8ff5fbd0.js"><link rel="prefetch" href="/assets/js/50.b4fb92f8.js"><link rel="prefetch" href="/assets/js/51.6bb28eec.js"><link rel="prefetch" href="/assets/js/52.c74c78cb.js"><link rel="prefetch" href="/assets/js/53.6bd5b0e5.js"><link rel="prefetch" href="/assets/js/54.96348b32.js"><link rel="prefetch" href="/assets/js/55.d5097965.js"><link rel="prefetch" href="/assets/js/56.2c92071c.js"><link rel="prefetch" href="/assets/js/57.7f18e9fb.js"><link rel="prefetch" href="/assets/js/58.65ed94be.js"><link rel="prefetch" href="/assets/js/59.7ca96399.js"><link rel="prefetch" href="/assets/js/6.52d35211.js"><link rel="prefetch" href="/assets/js/60.eb353ec2.js"><link rel="prefetch" href="/assets/js/61.9d08df0a.js"><link rel="prefetch" href="/assets/js/62.eb4bc347.js"><link rel="prefetch" href="/assets/js/63.323741b6.js"><link rel="prefetch" href="/assets/js/64.d1bf1237.js"><link rel="prefetch" href="/assets/js/65.c7a6c4f2.js"><link rel="prefetch" href="/assets/js/66.b406fbcb.js"><link rel="prefetch" href="/assets/js/67.f3de1f4b.js"><link rel="prefetch" href="/assets/js/68.0986e6ab.js"><link rel="prefetch" href="/assets/js/69.4504ea7d.js"><link rel="prefetch" href="/assets/js/7.55a5412a.js"><link rel="prefetch" href="/assets/js/70.5b2ff894.js"><link rel="prefetch" href="/assets/js/71.5258545b.js"><link rel="prefetch" href="/assets/js/72.93ad883d.js"><link rel="prefetch" href="/assets/js/73.e899a1fb.js"><link rel="prefetch" href="/assets/js/74.9c5e8120.js"><link rel="prefetch" href="/assets/js/75.88c2ee22.js"><link rel="prefetch" href="/assets/js/76.8ed82020.js"><link rel="prefetch" href="/assets/js/77.d346e0ed.js"><link rel="prefetch" href="/assets/js/78.74ac0303.js"><link rel="prefetch" href="/assets/js/79.3fd30cfc.js"><link rel="prefetch" href="/assets/js/8.942f3372.js"><link rel="prefetch" href="/assets/js/80.fff865f6.js"><link rel="prefetch" href="/assets/js/81.12312749.js"><link rel="prefetch" href="/assets/js/82.519d9454.js"><link rel="prefetch" href="/assets/js/83.b198cdf1.js"><link rel="prefetch" href="/assets/js/84.aa51a346.js"><link rel="prefetch" href="/assets/js/85.4fb38680.js"><link rel="prefetch" href="/assets/js/86.1c76f8a5.js"><link rel="prefetch" href="/assets/js/87.5706ec94.js"><link rel="prefetch" href="/assets/js/88.c20ba8e3.js"><link rel="prefetch" href="/assets/js/89.9ef11b3b.js"><link rel="prefetch" href="/assets/js/9.4377c98a.js"><link rel="prefetch" href="/assets/js/90.0087b4d0.js"><link rel="prefetch" href="/assets/js/91.01f85c23.js"><link rel="prefetch" href="/assets/js/92.7583a50f.js"><link rel="prefetch" href="/assets/js/93.67322b93.js"><link rel="prefetch" href="/assets/js/94.2c48b9f3.js"><link rel="prefetch" href="/assets/js/95.9fd63ed3.js"><link rel="prefetch" href="/assets/js/96.c0539d30.js"><link rel="prefetch" href="/assets/js/97.198524c5.js"><link rel="prefetch" href="/assets/js/98.e35088d8.js"><link rel="prefetch" href="/assets/js/99.ed248232.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.522f73f5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">vins blog</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">home</a></div><div class="nav-item"><a href="/fd/" class="nav-link">fd</a></div><div class="nav-item"><a href="/node/" class="nav-link router-link-active">node</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">home</a></div><div class="nav-item"><a href="/fd/" class="nav-link">fd</a></div><div class="nav-item"><a href="/node/" class="nav-link router-link-active">node</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>sequelizejs-模型</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/node/sql/sequelizejs/model.html#模型定义" class="sidebar-link">模型定义</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/node/sql/sequelizejs/model.html#简单定义" class="sidebar-link">简单定义</a></li><li class="sidebar-sub-header"><a href="/node/sql/sequelizejs/model.html#类型定义" class="sidebar-link">类型定义</a></li><li class="sidebar-sub-header"><a href="/node/sql/sequelizejs/model.html#字段的getter和setter的定义" class="sidebar-link">字段的getter和setter的定义</a></li><li class="sidebar-sub-header"><a href="/node/sql/sequelizejs/model.html#模型选项定义" class="sidebar-link">模型选项定义</a></li><li class="sidebar-sub-header"><a href="/node/sql/sequelizejs/model.html#模型作用域定义" class="sidebar-link">模型作用域定义</a></li><li class="sidebar-sub-header"><a href="/node/sql/sequelizejs/model.html#钩子定义" class="sidebar-link">钩子定义</a></li></ul></li><li><a href="/node/sql/sequelizejs/model.html#字段类型" class="sidebar-link">字段类型</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/node/sql/sequelizejs/model.html#字段验证" class="sidebar-link">字段验证</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/node/sql/sequelizejs/model.html#索引" class="sidebar-link">索引</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/node/sql/sequelizejs/model.html#模型扩展" class="sidebar-link">模型扩展</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/node/sql/sequelizejs/model.html#参考" class="sidebar-link">参考</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="sequelizejs-模型"><a href="#sequelizejs-模型" aria-hidden="true" class="header-anchor">#</a> sequelizejs-模型</h1> <h2 id="模型定义"><a href="#模型定义" aria-hidden="true" class="header-anchor">#</a> 模型定义</h2> <p>模型定义使用define函数</p> <h3 id="简单定义"><a href="#简单定义" aria-hidden="true" class="header-anchor">#</a> 简单定义</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 简单定义</span>
+<span class="token keyword">const</span> Project <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'project'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	title<span class="token punctuation">:</span> Sequelize<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+	description<span class="token punctuation">:</span> Sequelize<span class="token punctuation">.</span><span class="token constant">TEXT</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="类型定义"><a href="#类型定义" aria-hidden="true" class="header-anchor">#</a> 类型定义</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> Foo <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		type<span class="token punctuation">:</span> Sequelize<span class="token punctuation">.</span>String<span class="token punctuation">,</span>       <span class="token comment">// 字段类型</span>
+		validate：<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>                 <span class="token comment">// 验证</span>
+		allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>             <span class="token comment">// 允许为空</span>
+		defaultValue<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>           <span class="token comment">// 默认值</span>
+		primaryKey<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>             <span class="token comment">// 主键</span>
+		autoIncrement<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>          <span class="token comment">// 自动增加</span>
+		unique<span class="token punctuation">:</span> <span class="token boolean">true</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="字段的getter和setter的定义"><a href="#字段的getter和setter的定义" aria-hidden="true" class="header-anchor">#</a> 字段的getter和setter的定义</h3> <p>表的定义可以使用es5中的get和set，在查询的时候使用get返回，更新的时候使用set更新</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 字段的getter和setter</span>
+<span class="token keyword">const</span> Foo <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> Sequelize<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> title <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getDataValue</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getDataValue</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' ('</span> <span class="token operator">+</span> title <span class="token operator">+</span> <span class="token string">')'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> Sequelize<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+    allowNull<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token keyword">set</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDataValue</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">,</span> val<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="模型选项定义"><a href="#模型选项定义" aria-hidden="true" class="header-anchor">#</a> 模型选项定义</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 时间戳处理</span>
+<span class="token keyword">const</span> Bar <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">/* bla */</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+
+	timestamps<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 时间戳处理(updatedAt, createdAt)，true添加，false不添加，默认添加</span>
+
+	createdAt<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>  <span class="token comment">// 记录创建时间戳，（true添加，false不添加）在timestamps为true时生效</span>
+
+	updatedAt<span class="token punctuation">:</span> <span class="token string">'updateTimestamp'</span><span class="token punctuation">,</span> <span class="token comment">// 记录修改时间戳，（true添加，false不添加，字符串修改为别名）在timestamps为true时生效</span>
+
+	deletedAt<span class="token punctuation">:</span> <span class="token string">'destroyTime'</span><span class="token punctuation">,</span> <span class="token comment">// 记录删除时间戳</span>
+
+	paranoid<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 记录删除时，不要删除数据库条目，而是将新添加的属性deletedAt设置为当前日期，只有在timestamps开启时有效</span>
+
+	underscored<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 使用下划线的形势添加字段名，默认使用camelcase方式，设置为true后，updatedAt会变为updated_at</span>
+
+	freezeTableName<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 禁止修改表名</span>
+
+	tableName<span class="token punctuation">:</span> <span class="token string">'custom_table_name'</span><span class="token punctuation">,</span>  <span class="token comment">// 自定义表名</span>
+
+	version<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 开启版本锁定，实例过期会抛出错误</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="模型作用域定义"><a href="#模型作用域定义" aria-hidden="true" class="header-anchor">#</a> 模型作用域定义</h3> <p>作用域有默认作用域和扩展作用域，默认的作用域定义在defaultScope，扩展的以对象的形势定义在scopes中</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 作用域定义</span>
+<span class="token keyword">const</span> Project <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'project'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">// Attributes }, {</span>
+	defaultScope<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		where<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+			active<span class="token punctuation">:</span> <span class="token boolean">true</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	scopes<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		custom<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+			include<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+				<span class="token punctuation">{</span> model<span class="token punctuation">:</span> User<span class="token punctuation">,</span> where<span class="token punctuation">:</span> <span class="token punctuation">{</span> active<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+			<span class="token punctuation">]</span>
+			where<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+				deleted<span class="token punctuation">:</span> <span class="token boolean">true</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+			limit<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+			offset<span class="token punctuation">:</span> <span class="token number">10</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>默认作用域中添加的条件，关联等都会应用到该模型所有的操作</li> <li>通过Model.scope来调用自定义作用域，返回该模型的一个视图</li> <li>Model.scope函数传递多个作用域名称，或者传递一个数组，可以合并作用域</li> <li>作用域合并，相同的条件，后者覆盖前者，操作时显视声明的会覆盖作用域</li></ul> <h3 id="钩子定义"><a href="#钩子定义" aria-hidden="true" class="header-anchor">#</a> 钩子定义</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 钩子定义</span>
+<span class="token keyword">const</span> User <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">// Attributes }, {</span>
+	hooks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		beforeValidate<span class="token punctuation">:</span> <span class="token punctuation">(</span>user<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+			user<span class="token punctuation">.</span>mood <span class="token operator">=</span> <span class="token string">'happy'</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		afterValidate<span class="token punctuation">:</span> <span class="token punctuation">(</span>user<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+			user<span class="token punctuation">.</span>username <span class="token operator">=</span> <span class="token string">'Toni'</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>通过Model.hook和Model.addHook，或者直接添加hook的名称也可以添加钩子</p> <p><a href="http://docs.sequelizejs.com/manual/tutorial/hooks.html" target="_blank" rel="noopener noreferrer">具体的生命周期钩子参照<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="字段类型"><a href="#字段类型" aria-hidden="true" class="header-anchor">#</a> 字段类型</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 字段类型说明</span>
+	<span class="token constant">STRING</span>	函数（长度<span class="token operator">=</span> <span class="token number">255</span>：整数）	可变长度的字符串
+
+	<span class="token constant">CHAR</span>	函数（长度<span class="token operator">=</span> <span class="token number">255</span>：整数）	固定长度的字符串。
+
+	<span class="token constant">TEXT</span>	函数（长度：字符串）	无限长度的文本列。可用长度：tiny，medium，long
+
+	<span class="token constant">TINYINT</span>	函数（长度：整数）	一个<span class="token number">8</span>位整数。
+
+	<span class="token constant">SMALLINT</span>	函数（长度：整数）	一个<span class="token number">16</span>位整数。
+
+	<span class="token constant">MEDIUMINT</span>	函数（长度：整数）	一个<span class="token number">24</span>位整数。
+
+	<span class="token constant">INTEGER</span>	函数（长度<span class="token operator">=</span> <span class="token number">255</span>：整数）	一个<span class="token number">32</span>位整数。
+
+	<span class="token constant">BIGINT</span>	函数（长度：整数）	<span class="token number">64</span>位整数。注意：定义为的属性<span class="token constant">BIGINT</span>将被视为来自node<span class="token operator">-</span>postgres的string此特性，以防止精度损失。要将此属性设置为a number，这是一种可能的解决方法。
+
+	<span class="token constant">FLOAT</span>	函数（长度：整数，小数：整数）	浮点数（<span class="token number">4</span>字节精度）。
+
+	<span class="token constant">DOUBLE</span>	函数（长度：整数，小数：整数）	浮点数（<span class="token number">8</span>字节精度）。
+
+	<span class="token constant">DECIMAL</span>	函数（精度：整数，小数：整数）	十进制数。
+
+	<span class="token constant">REAL</span>	函数（长度：整数，小数：整数）	浮点数（<span class="token number">4</span>字节精度）。
+
+	<span class="token constant">BOOLEAN</span>	函数	布尔<span class="token operator">/</span> tinyint列，取决于方言
+
+	<span class="token constant">BLOB</span>	函数（长度：字符串）	二进制存储。可用长度：tiny，medium，long
+
+	<span class="token constant">ENUM</span>	<span class="token keyword">function</span> （values：string <span class="token punctuation">[</span><span class="token punctuation">]</span>）	枚举。DataTypes<span class="token punctuation">.</span><span class="token constant">ENUM</span><span class="token punctuation">(</span><span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token string">'another value'</span><span class="token punctuation">)</span>。
+
+	<span class="token constant">DATE</span>	函数（长度：整数）	日期时间列
+
+	<span class="token constant">DATEONLY</span>	功能	仅限日期列（无时间戳）
+
+	<span class="token constant">TIME</span>	功能	时间栏
+
+	<span class="token constant">NOW</span>	    功能	当前时间戳的默认值
+
+	<span class="token constant">UUID</span>	功能	存储唯一通用标识符的列。与<span class="token constant">UUIDV1</span>或一起<span class="token constant">UUIDV4</span>使用默认值。
+
+	<span class="token constant">UUIDV1</span>	功能	根据<span class="token constant">UUID</span> v1标准生成的默认唯一通用标识符
+
+	<span class="token constant">UUIDV4</span>	功能	根据<span class="token constant">UUID</span> v4标准生成的默认唯一通用标识符
+
+	<span class="token constant">HSTORE</span>	功能	键<span class="token operator">/</span>值存储列。仅适用于Postgres。
+
+	<span class="token constant">JSON</span>	功能	<span class="token constant">JSON</span>字符串列。可在MySQL，Postgres和SQLite中使用
+
+	<span class="token constant">JSONB</span>	功能	二进制存储<span class="token constant">JSON</span>列。仅适用于Postgres。
+
+	<span class="token constant">ARRAY</span>	<span class="token keyword">function</span> （类型：DataTypes）	type例如，一个数组DataTypes<span class="token punctuation">.</span><span class="token constant">ARRAY</span><span class="token punctuation">(</span>DataTypes<span class="token punctuation">.</span><span class="token constant">DECIMAL</span><span class="token punctuation">)</span>。仅适用于Postgres。
+
+	范围	<span class="token keyword">function</span> （类型：DataTypes）	范围类型是表示某种元素类型的值范围的数据类型（称为范围的子类型）。仅适用于Postgres。有关更多详细信息，请参阅Postgres文档
+
+	<span class="token constant">GEOMETRY</span>	<span class="token keyword">function</span> （type：string，srid：string）	存储几何信息的列。它仅适用于PostgreSQL（使用PostGIS）或MySQL。在MySQL中，允许的几何类型<span class="token constant">POINT</span>，<span class="token constant">LINESTRING</span>，<span class="token constant">POLYGON</span>。
+
+</code></pre></div><blockquote><p>提示：除了上面提到的类型之外，integer，bigint，float和double还支持unsigned和zerofill属性，它们可以按任何顺序组合：请注意，这不适用于PostgreSQL！</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>	Sequelize<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">.</span><span class="token constant">UNSIGNED</span>              <span class="token comment">// INTEGER UNSIGNED</span>
+	Sequelize<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">UNSIGNED</span>          <span class="token comment">// INTEGER(11) UNSIGNED</span>
+	Sequelize<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">ZEROFILL</span>          <span class="token comment">// INTEGER(11) ZEROFILL</span>
+	Sequelize<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">ZEROFILL</span><span class="token punctuation">.</span><span class="token constant">UNSIGNED</span> <span class="token comment">// INTEGER(11) UNSIGNED ZEROFILL</span>
+	Sequelize<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">UNSIGNED</span><span class="token punctuation">.</span><span class="token constant">ZEROFILL</span> <span class="token comment">// INTEGER(11) UNSIGNED ZEROFILL</span>
+</code></pre></div><h2 id="字段验证"><a href="#字段验证" aria-hidden="true" class="header-anchor">#</a> 字段验证</h2> <ul><li>is: [&quot;^[a-z]+$&quot;,'i'] or /^[a-z]+$/i,     // 正则</li> <li>not: [&quot;[a-z]&quot;,'i'],       // 否定匹配</li> <li>isEmail: true,            // 邮箱检测</li> <li>isUrl: true,              // 地址检测</li> <li>isIP: true,               // 是否是ip地址，ipv4或者ipv6</li> <li>isIPv4: true,             // checks for IPv4 (129.89.23.1)</li> <li>isIPv6: true,             // checks for IPv6 format</li> <li>isAlpha: true,            // will only allow letters</li> <li>isAlphanumeric: true,     // will only allow alphanumeric characters, so &quot;_abc&quot; will fail</li> <li>isNumeric: true,          // will only allow numbers</li> <li>isInt: true,              // checks for valid integers</li> <li>isFloat: true,            // checks for valid floating point numbers</li> <li>isDecimal: true,          // checks for any numbers</li> <li>isLowercase: true,        // checks for lowercase</li> <li>isUppercase: true,        // checks for uppercase</li> <li>notNull: true,            // won't allow null</li> <li>isNull: true,             // only allows null</li> <li>notEmpty: true,           // don't allow empty strings</li> <li>equals: 'specific value', // only allow a specific value</li> <li>contains: 'foo',          // force specific substrings</li> <li>notIn: [['foo', 'bar']],  // check the value is not one of these</li> <li>isIn: [['foo', 'bar']],   // check the value is one of these</li> <li>notContains: 'bar',       // don't allow specific substrings</li> <li>len: [2,10],              // only allow values with length between 2 and 10</li> <li>isUUID: 4,                // only allow uuids</li> <li>isDate: true,             // only allow date strings</li> <li>isAfter: &quot;2011-11-05&quot;,    // only allow date strings after a specific date</li> <li>isBefore: &quot;2011-11-05&quot;,   // only allow date strings before a specific date</li> <li>max: 23,                  // only allow values &lt;= 23</li> <li>min: 23,                  // only allow values &gt;= 23</li> <li>isCreditCard: true,       // check for valid credit card numbers</li> <li>isEven(value) { if (parseInt(value) % 2 != 0) throw new Error('Only even values are allowed!') }  // 自定义验证规则</li></ul> <h2 id="索引"><a href="#索引" aria-hidden="true" class="header-anchor">#</a> 索引</h2> <p>Sequelize支持在模型定义中添加索引，这些索引将在Model.sync()或期间创建sequelize.sync。</p> <div class="language-js extra-class"><pre class="language-js"><code>sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  indexes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 在email上创建唯一的索引</span>
+    <span class="token punctuation">{</span>
+      unique<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      fields<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'email'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// Creates a gin index on data with the jsonb_path_ops operator</span>
+    <span class="token punctuation">{</span>
+      fields<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      using<span class="token punctuation">:</span> <span class="token string">'gin'</span><span class="token punctuation">,</span>
+      operator<span class="token punctuation">:</span> <span class="token string">'jsonb_path_ops'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// By default index name will be [table]_[fields]</span>
+    <span class="token comment">// 多列部分索引</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'public_by_author'</span><span class="token punctuation">,</span>
+      fields<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">,</span> <span class="token string">'status'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      where<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        status<span class="token punctuation">:</span> <span class="token string">'public'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 具有有序字段的BTREE索引</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'title_index'</span><span class="token punctuation">,</span>
+      method<span class="token punctuation">:</span> <span class="token string">'BTREE'</span><span class="token punctuation">,</span>
+      fields<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>attribute<span class="token punctuation">:</span> <span class="token string">'title'</span><span class="token punctuation">,</span> collate<span class="token punctuation">:</span> <span class="token string">'en_US'</span><span class="token punctuation">,</span> order<span class="token punctuation">:</span> <span class="token string">'DESC'</span><span class="token punctuation">,</span> length<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><h2 id="模型扩展"><a href="#模型扩展" aria-hidden="true" class="header-anchor">#</a> 模型扩展</h2> <p>类型于es6中的类，Class类扩展，Class.prototype为原型扩展</p> <div class="language-js extra-class"><pre class="language-js"><code>	<span class="token keyword">const</span> User <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> firstname<span class="token punctuation">:</span> Sequelize<span class="token punctuation">.</span><span class="token constant">STRING</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token comment">// 类扩展</span>
+	User<span class="token punctuation">.</span><span class="token function-variable function">classLevelMethod</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token string">'foo'</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 原型扩展</span>
+	User<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">instanceLevelMethod</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token string">'bar'</span>
+	<span class="token punctuation">}</span>
+</code></pre></div><h2 id="参考"><a href="#参考" aria-hidden="true" class="header-anchor">#</a> 参考</h2> <p><a href="http://docs.sequelizejs.com/manual/tutorial/models-definition.html" target="_blank" rel="noopener noreferrer">sequelizejs官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.4d681007.js" defer></script><script src="/assets/js/138.f78af822.js" defer></script>
+  </body>
+</html>
